@@ -11,6 +11,10 @@ import { environment } from '../environments/environment';
 import { EffectsModule } from '@ngrx/effects';
 import { routerReducer, StoreRouterConnectingModule } from '@ngrx/router-store';
 import { ArticleListModule } from './shared/modules/articleList/articleList.module';
+import { AuthModule } from './auth/auth.module';
+import { LocalStorageService } from './shared/services/localStorage.service';
+import { HTTP_INTERCEPTORS } from '@angular/common/http';
+import { AuthInterceptor } from './shared/services/auth.interceptor';
 
 @NgModule({
   declarations: [AppComponent],
@@ -18,6 +22,7 @@ import { ArticleListModule } from './shared/modules/articleList/articleList.modu
     BrowserModule,
     AppRoutingModule,
     NavbarModule,
+    AuthModule,
     FeedModule,
     StoreModule.forRoot({ router: routerReducer }, {}),
     StoreDevtoolsModule.instrument({
@@ -29,7 +34,10 @@ import { ArticleListModule } from './shared/modules/articleList/articleList.modu
     StoreRouterConnectingModule.forRoot(),
     ArticleListModule,
   ],
-  providers: [],
+  providers: [
+    LocalStorageService,
+    { provide: HTTP_INTERCEPTORS, useClass: AuthInterceptor, multi: true },
+  ],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
