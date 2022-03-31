@@ -15,6 +15,7 @@ import { AuthModule } from './auth/auth.module';
 import { LocalStorageService } from './shared/services/localStorage.service';
 import { HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AuthInterceptor } from './shared/services/auth.interceptor';
+import { MyPostsModule } from './myPosts/myPosts.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -33,6 +34,7 @@ import { AuthInterceptor } from './shared/services/auth.interceptor';
     EffectsModule.forRoot([]),
     StoreRouterConnectingModule.forRoot(),
     ArticleListModule,
+    MyPostsModule,
   ],
   providers: [
     LocalStorageService,

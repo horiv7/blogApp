@@ -1,13 +1,12 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { select, Store } from '@ngrx/store';
-import { map, Observable } from 'rxjs';
+import { Observable } from 'rxjs';
 import { AppStateInterface } from 'src/app/shared/types/appState.interface';
 import { ServerErrorsInterface } from 'src/app/shared/types/serverErrors.interface';
 
 import { loginAction } from '../../store/actions/login.action';
 import {
-  authFeatureSelector,
   isSubmittingSelector,
   validationErrorsSelector,
 } from '../../store/selectors';
