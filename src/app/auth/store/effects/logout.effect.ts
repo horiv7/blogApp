@@ -1,4 +1,5 @@
 import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Actions, createEffect, ofType } from '@ngrx/effects';
 import { Store } from '@ngrx/store';
 import { tap } from 'rxjs';
@@ -16,6 +17,7 @@ export class LogoutEffect {
         tap(() => {
           this.localStorageService.set('accessToken', '');
           this.store.dispatch(getArticleListAction({ url: '/articles' }));
+          this.router.navigateByUrl('/');
         })
       ),
     { dispatch: false }
@@ -24,6 +26,7 @@ export class LogoutEffect {
   constructor(
     private actions$: Actions,
     private localStorageService: LocalStorageService,
-    private store: Store
+    private store: Store,
+    private router: Router
   ) {}
 }

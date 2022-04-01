@@ -2,7 +2,8 @@
   <div class="row">
     <bl-article-form
       class="col-lg-8"
-      [initialValues]="initialValues"
+      *ngIf="initialValues$ | async"
+      [initialValues]="initialValues$ | async"
       [isSubmitting]="isSubmitting$ | async"
       [errors]="validationErrors$ | async"
       (articleSubmit)="onSubmit($event)"

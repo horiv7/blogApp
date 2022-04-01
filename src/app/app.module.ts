@@ -18,6 +18,7 @@ import { AuthInterceptor } from './shared/services/auth.interceptor';
 import { MyPostsModule } from './myPosts/myPosts.module';
 import { ArticleModule } from './article/article.module';
 import { NewArticleModule } from './newArticle/newArticle.module';
+import { EditArticleModule } from './editArticle/editArticle.module';
 
 @NgModule({
   declarations: [AppComponent],
@@ -28,6 +29,7 @@ import { NewArticleModule } from './newArticle/newArticle.module';
     AuthModule,
     FeedModule,
     NewArticleModule,
+    EditArticleModule,
     StoreModule.forRoot({ router: routerReducer }, {}),
     StoreDevtoolsModule.instrument({
       maxAge: 25,
