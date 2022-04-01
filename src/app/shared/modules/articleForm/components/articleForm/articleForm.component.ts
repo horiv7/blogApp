@@ -4,14 +4,14 @@ import { ArticleInputInterface } from 'src/app/shared/types/articleInput.interfa
 import { ServerErrorsInterface } from 'src/app/shared/types/serverErrors.interface';
 
 @Component({
-  selector: 'mc-article-form',
+  selector: 'bl-article-form',
   templateUrl: './articleForm.component.html',
   styleUrls: ['./articleForm.component.scss'],
 })
 export class ArticleFormComponent implements OnInit {
   @Input('initialValues')
-  initialValuesProps!: ArticleInputInterface;
-  @Input('isSubmitting') isSubmittingProps!: boolean;
+  initialValuesProps!: ArticleInputInterface | null;
+  @Input('isSubmitting') isSubmittingProps!: boolean | null;
   @Input('errors')
   errorsProps!: ServerErrorsInterface | null;
 
@@ -27,10 +27,10 @@ export class ArticleFormComponent implements OnInit {
   }
   initializeForm(): void {
     this.form = this.fb.group({
-      title: this.initialValuesProps.title,
-      description: this.initialValuesProps.description,
-      body: this.initialValuesProps.body,
-      tagList: this.initialValuesProps.tagList.join(' '),
+      title: this.initialValuesProps?.title,
+      description: this.initialValuesProps?.description,
+      body: this.initialValuesProps?.body,
+      tagList: this.initialValuesProps?.tagList.join(' '),
     });
   }
 
