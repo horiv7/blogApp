@@ -2,7 +2,9 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
 
-Live preview: [BlogApp/](https://blogapp-6a9d6.web.app/)
+Live preview: [BlogApp](https://blogapp-6a9d6.web.app/)
+
+Backend docs: https://realworld-docs.netlify.app/docs/specs/backend-specs/endpoints/
 
 ## Development server
 
