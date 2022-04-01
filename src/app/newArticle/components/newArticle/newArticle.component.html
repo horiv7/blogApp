@@ -1,0 +1,10 @@
+<div class="container mt-5">
+  <div class="row">
+    <mc-article-form
+      class="col-lg-8"
+      [initialValues]="initialValues"
+      [errors]="validationErrors$ | async"
+      (articleSubmit)="onSubmit($event)"
+    ></mc-article-form>
+  </div>
+</div>
