@@ -1,25 +1,24 @@
-<div
-  class="container "
-  *ngFor="let article of (articleList$ | async)?.articles"
-  style="margin-top: 1rem"
->
-  <div class="card text-dark bg-light">
-    <div class="card-header">
-      <img [src]="article.author.image" alt="" />
-      <a href="" class="text-info">{{ article.author.username }}</a>
-    </div>
-    <div class="card-body">
-      <span class="date"> {{ article.createdAt }}</span>
-      <h2 class="card-title">{{ article.title }}</h2>
-      <p class="card-text">
-        {{ article.description }}
-      </p>
-      <a
-        href="#"
-        [routerLink]="['/articles', article.slug]"
-        class="btn btn-primary"
-        >Read more</a
+
+      <div
+        class="card text-dark bg-light mb-4"
+        *ngFor="let article of (articleList$ | async)?.articles"
       >
-    </div>
-  </div>
-</div>
+        <div class="card-header">
+          <img [src]="article.author.image" alt="" />
+          <a href="" class="text-info">{{ article.author.username }}</a>
+        </div>
+        <div class="card-body">
+          <span class="date"> {{ article.createdAt }}</span>
+          <h2 class="card-title">{{ article.title }}</h2>
+          <p class="card-text">
+            {{ article.description }}
+          </p>
+          <a
+            href="#"
+            [routerLink]="['/articles', article.slug]"
+            class="btn btn-primary"
+            >Read more</a
+          >
+        </div>
+      </div>
+   

@@ -1,0 +1,41 @@
+<div class="container mt-5" *ngIf="article">
+  <div class="row">
+    <div class="col-lg-8">
+      <article>
+        <!-- Post header-->
+        <header class="mb-4">
+          <!-- Post title-->
+          <h1 class="fw-bolder mb-1">{{ article.title }}</h1>
+          <!-- Post meta content-->
+          <div class="text-muted fst-italic mb-2">
+            Posted on {{ article.createdAt | date: "d MMM y" }} by
+            {{ article.author.username }}
+          </div>
+          <!-- Post categories-->
+          <a
+            *ngFor="let tag of article.tagList"
+            class="badge bg-secondary text-decoration-none link-light"
+            href="#!"
+            >{{ tag }}</a
+          >
+          <span *ngIf="isAuthor$ | async"
+          ><a
+            class="btn btn-sm btn-outline-secondary"
+            [routerLink]="['/articles', article.slug, 'edit']"
+            ><i class="ion-edit"></i> Edit Article </a
+          ><button class="btn btn-sm btn-outline-danger" (click)="deleteArticle()">
+            <i class="ion-trash-a"></i> Delete Article
+          </button></span
+        >
+        </header>
+
+        <section class="mb-5">
+          <h2 class="fw-bolder mb-4 mt-5">{{ article.description }}</h2>
+          <p class="fs-5 mb-4">
+            {{ article.body }}
+          </p>
+        </section>
+      </article>
+    </div>
+  </div>
+</div>
