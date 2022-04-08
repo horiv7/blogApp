@@ -2,11 +2,12 @@
 
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.2.3.
 
+ 
 Live preview: [BlogApp/](https://blogapp-6a9d6.web.app/)
 <br>
 <br>
 I wanted to make an application with CRUD operations using Angular and Ngrx.
-Additionally, I wanted Auth implemented. I searched Public Apis. I found a Realworld.io project.
+Additionally, I wanted Auth implemented. I searched Public Apis. I found a [Realworld.io](https://realworld-docs.netlify.app/docs/specs/backend-specs/endpoints/) project.
 
 I decided to use the Realworld project as Rest Api to achieve my goal.
 My task was to make something like a classic Blog.
@@ -29,6 +30,11 @@ For now, I keep it simple, but I'll add features as time goes on.
 <br>
 <br>
 <br>
+=======
+Live preview: [BlogApp](https://blogapp-6a9d6.web.app/)
+
+Backend docs: https://realworld-docs.netlify.app/docs/specs/backend-specs/endpoints/
+ 
 
 ## Development server
 
