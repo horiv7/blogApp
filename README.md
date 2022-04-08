@@ -33,7 +33,7 @@ For now, I keep it simple, but I'll add features as time goes on.
 
 <br>
 <br>
-=======
+
 Live preview: [BlogApp](https://blogapp-6a9d6.web.app/)
 
 Backend docs: https://realworld-docs.netlify.app/docs/specs/backend-specs/endpoints/
