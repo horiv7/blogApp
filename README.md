@@ -27,8 +27,10 @@ For now, I keep it simple, but I'll add features as time goes on.
 <br>
 <br>
 <br>
+
 ![App](https://github.com/horiv7/portfolio/blob/main/src/assets/img/blogApp.png)
 <br>
+
 <br>
 <br>
 =======
